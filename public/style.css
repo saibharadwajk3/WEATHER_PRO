@@ -1,0 +1,127 @@
+.showcase {
+    height: 100vh;
+    min-height: 1000px;
+    background: url("images/clearsky.webp") no-repeat center center;
+    background-size: cover;
+}
+
+#title {
+    font-family: "Merriweather", serif;
+    color: #ffffff;
+    color: none;
+    font-size: 30px;
+    font-weight: bold;
+    background: rgba(231, 18, 18, 0.8);
+}
+
+#title span {
+    color: black;
+}
+
+#currentTemp {
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+.row {
+    justify-content: center;
+    align-items: center;
+}
+
+.row2 {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #fff;
+}
+
+.row3 {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+.tab-content table {
+    color: #fff;
+}
+
+.row3 #conditions div {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.row4 {
+    background-color: rgba(231, 18, 18, 0.8);
+    color: #ffffff;
+}
+
+.row3 #wpForecast {
+    border-left: 1px solid white;
+}
+
+.row2 .mar {
+    border-left: 1px solid white;
+}
+
+.row4 #footer .git {
+    border-right: 1px solid white;
+}
+
+img {
+    margin: 10px;
+    border-radius: 20px;
+}
+
+#footer a {
+    text-decoration: none;
+    display: inline-block;
+    color: #ffffff;
+    margin: 10px;
+}
+
+.cs {
+    color: #fff;
+}
+
+.loader {
+    border: 12px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 12px solid #444444;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#footer a:hover {
+    color: black;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (max-width: 576px) {
+    #current {
+        margin-top: 50px;
+        font-size: 1em;
+    }
+    #conditions {
+        font-size: 1em;
+    }
+}

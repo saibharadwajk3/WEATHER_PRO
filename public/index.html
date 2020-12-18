@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Weather_pro</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/113e797535.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+</head>
+
+<body>
+    <div class="center">
+    </div>
+    <div class="showcase d-flex flex-column h-100">
+        <div class="container" id="main">
+            <!-- header -->
+            <div class="row row1">
+                <div class="col text-center mt-2" id="title">
+                    <i class="fas fa-cloud-sun cs"></i><span>WEATHER</span>_PRO
+                </div>
+            </div>
+            <!-- main1 -->
+            <div class="row row2">
+                <div id="current" class="col ">
+
+                    <div id="temp" class="col-sm text-center ">
+                        <div id="location" class="row col d-md-line-block ">
+                            City,Country
+                        </div>
+                        <div id="dayTime" class="row col d-md-line-block ">Date</div>
+
+                        <div id="currentTemp" class="row col d-md-line-block ">
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-sm text-center mar ">
+                    <div class="col ">
+                        <img id="WeatherIcon" src=" " alt="weather icon" /><br />
+                        <p id="Iconsummary">forecast</p>
+                    </div>
+                </div>
+            </div>
+            <!-- main2 -->
+            <div class="row row3 ">
+                <div class="col-md text-center " id="conditions">
+                    <div class="row text-center ">
+                        <div class="col-md " id="Sun_Rise">Sunrise</div>
+                    </div>
+                    <div class="row text-center ">
+                        <div class="col-md " id="Sun_set">Sunset</div>
+                    </div>
+
+                    <div class="row text-center ">
+                        <div class="col-md " id="Humidity">Humidity</div>
+                    </div>
+
+                    <div class="row text-center ">
+                        <div class="col-md " id="wind">WindSpeed</div>
+                    </div>
+                </div>
+
+                <!-- forcast -->
+
+                <div id="wpForecast" class="col-md">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" id="forecastTab">
+                        <li class="nav-item">
+                            <div class="btn b2 btn-primary mt-2 mb-2">hourly</div>
+                        </li>
+
+                        <li class="nav-item ">
+                            <div class="btn b1 btn-success ml-2 mt-2 mb-2">Daily</div>
+                        </li>
+
+                        <li class="nav-item ">
+                            <div class="btn b3 btn-secondary ml-2 mt-2 mb-2">Next 48 hours</div>
+                        </li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <!-- 1 st table -->
+                        <div class="tab-pane container" id="hourly">
+                            <table id="dailyForecast" class="table table-striped " width="100%"></table>
+                        </div>
+                        <!-- 2nd table -->
+                        <div class="tab-pane container active " id="weekly">
+                            <table id="weeklyForecast" class="table table-striped" width="100%"></table>
+                        </div>
+                        <!-- graph -->
+
+                        <div class="tab-pane containe" id="graph">
+                            <canvas id="graph48" width="400 " height="400 ">
+
+
+                            </canvas>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <div class="row row4 ">
+                <div id="footer" class="col text-center ">
+                    <div class="row ">
+                        <div class="col git ">
+                            <a href="# ">Code at <i class="fa fa-github" aria-hidden="true "></i></a>
+
+                        </div>
+                        <div class="col openWeather">
+                            <a href="https://openweathermap.org/api" target="_blank">&copy;openweathermap.org</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- custom js -->
+    <script src="Weather.js "></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+</body>
+
+</html>
