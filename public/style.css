@@ -57,13 +57,15 @@
     color: #ffffff;
 }
 
-.row3 #wpForecast {
-    border-left: 1px solid white;
-}
 
-.row2 .mar {
+/* .row3 #wpForecast {
     border-left: 1px solid white;
-}
+} */
+
+
+/* .row2 .mar {
+    border-left: 1px solid white;
+} */
 
 .row4 #footer .git {
     border-right: 1px solid white;
@@ -86,9 +88,9 @@ img {
 }
 
 .loader {
-    border: 12px solid #f3f3f3;
+    border: 12px solid red;
     border-radius: 50%;
-    border-top: 12px solid #444444;
+    border-top: 12px solid white;
     width: 70px;
     height: 70px;
     animation: spin 1s linear infinite;

@@ -31,6 +31,7 @@ const iconValue = {
 // place info
 
 async function fetchCurrentPlace(latitude, longitude) {
+    console.log(latitude, longitude);
     const url1 = `/fetchPlaceWeather/${latitude}/${longitude}`;
     //fetch
     let response = await fetch(url1);
@@ -45,6 +46,7 @@ async function fetchCurrentPlace(latitude, longitude) {
     //call draw function to draw graph
 
     draw(obj);
+    document.querySelector("#wpForecast").style.borderLeft = "1px solid white";
 
     //pulling date and time
     let dt = new Date(data.dt * 1000);
@@ -134,6 +136,7 @@ function fetchOpenWeather(info) {
     getIcon(icon);
 
     document.querySelector(".loader").style.display = "none";
+    document.querySelector(".mar").style.borderLeft = "1px solid white";
 
     showAlert(
         "Weather forecast based on address,to which your wi-fi is registered to (Not GPS).For accurate results open site in mobile",
@@ -159,7 +162,7 @@ function bgChange(discription) {
             return "images/showerrain.jpg";
 
         case iconValue.RAIN:
-            return "images/rain.jpg";
+            return "images/showerrain.jpg";
 
         case iconValue.THUNDERSTORM:
             return "images/thunderstorm.webp";
@@ -303,7 +306,7 @@ function draw(object) {
                 yAxes: [{
                     gridLines: {
                         display: true,
-                        color: "#FFFFFF",
+                        color: "rgba(255, 255, 255,.6)",
                     },
                     ticks: {
                         // Include a dollar sign in the ticks
@@ -323,8 +326,6 @@ function draw(object) {
         },
     });
 }
-
-initGeoLocation();
 
 function initGeoLocation() {
     if (navigator.geolocation) {
@@ -385,3 +386,29 @@ document.querySelector(".b3").addEventListener("click", (e) => {
     document.getElementById("hourly").classList.remove("active");
     document.getElementById("weekly").classList.remove("active");
 });
+
+//gsap animation
+
+function animate() {
+    const timeline = gsap.timeline({
+        defaults: { duration: 1.5 },
+        onComplete: initGeoLocation,
+    });
+    timeline
+        .from(".row1", { y: "-100%", ease: "bounce" })
+        .from(".row2", {
+            x: "-100vw",
+            ease: "slow(0.5, 0.8)",
+        })
+
+    .from(".row3", {
+            x: "100vw",
+            ease: "slow(0.5, 0.8)",
+        })
+        .from(".row4", {
+            y: "100vh",
+            ease: "bounce",
+        });
+}
+
+animate();
