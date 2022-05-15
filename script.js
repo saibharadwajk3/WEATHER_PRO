@@ -3,7 +3,7 @@ require("dotenv").config();
 //create server
 const express = require("express");
 const app = express();
-app.listen(2000, () => console.log("listening at 2000"));
+app.listen(process.env.PORT || 2000, () => console.log("listening at 2000"));
 app.use(express.static("public"));
 app.use(express.json({ limit: "1mb" }));
 //server side fetch
@@ -24,5 +24,4 @@ app.get("/fetchPlaceWeather/:lat/:lng", async(request, response) => {
     const weather_info = await weather_res.json();
     total_data = { place_info, weather_info };
     response.json(total_data);
-    console.log(total_data);
 });

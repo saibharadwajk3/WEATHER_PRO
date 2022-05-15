@@ -35,11 +35,8 @@ async function fetchCurrentPlace(latitude, longitude) {
     const url1 = `/fetchPlaceWeather/${latitude}/${longitude}`;
     //fetch
     let response = await fetch(url1);
-    // console.log(response);
     let obj = await response.json();
-    // console.log(obj);
     let data = obj.place_info;
-    console.log(data);
 
     //call openweather function to get weather info
     fetchOpenWeather(obj);
@@ -89,7 +86,6 @@ async function fetchCurrentPlace(latitude, longitude) {
 }
 //weather info
 function fetchOpenWeather(info) {
-    console.log(info);
     let data = info.weather_info;
     //initilising rrquired data
     let icon = data.current.weather[0].icon;
@@ -284,8 +280,6 @@ function draw(object) {
     });
 
     let ctx = document.getElementById("graph48").getContext("2d");
-
-    console.log(xs, ys);
 
     let myChart = new Chart(ctx, {
         type: "line",
